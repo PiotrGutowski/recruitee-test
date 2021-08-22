@@ -19,12 +19,25 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@core/*": [
+        "../recruitee-test/src/app/core/*"
+      ],
+      "@store/*": [
+        "../recruitee-test/src/app/store/*"
+      ],
+      "@shared/*": [
+        "../recruitee-test/src/app/shared/*"
+      ]
+    },
+    "strictNullChecks": false
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
-    "strictTemplates": true
+    "strictTemplates": true,
+    "enableIvy": true
   }
 }

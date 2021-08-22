@@ -1,0 +1,11 @@
+.text-center {
+  text-align: center;
+}
+
+.content-center {
+  margin: 0 auto;
+}
+
+:host ::ng-deep .mat-dialog-container {
+  background-color:  white !important;
+}

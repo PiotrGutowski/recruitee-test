@@ -1,0 +1,5 @@
+<div class="list-container">
+  <mat-list class="list" *ngFor="let item of clientDetails$ | async | keyvalue: originalOrder">
+    <mat-list-item>{{item.key | titleCase}} : {{item.value}} </mat-list-item>
+  </mat-list>
+</div>

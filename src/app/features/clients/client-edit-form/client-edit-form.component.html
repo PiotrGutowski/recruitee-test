@@ -1,0 +1,4 @@
+<ng-container *ngIf="clientForm">
+  <app-client-form-view [clientForm]="clientForm" (saveForm)="saveForm($event)" (addNewTag)="addNewTag()"
+    (cancelForm)="cancel()" (removeTag)="removeTag($event)"></app-client-form-view>
+</ng-container>

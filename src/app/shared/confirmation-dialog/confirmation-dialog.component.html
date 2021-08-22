@@ -1,0 +1,11 @@
+<div class="background-color">
+  <h1 mat-dialog-title class="text-center">{{data.text}}</h1>
+  <div mat-dialog-content>
+  </div>
+  <div mat-dialog-actions align="center">
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>{{data.confirmButtonText}}</button>
+    <ng-container *ngIf="!hasOnlyConfirmButton">
+      <button mat-button (click)="onCloseCancel()">{{data.cancelButtonText}}</button>
+    </ng-container>
+  </div>
+</div>

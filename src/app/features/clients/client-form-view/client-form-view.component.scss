@@ -1,0 +1,40 @@
+.form-wrapper {
+  display: flex;
+  height: 90%;
+  align-items: center;
+  background: white;
+
+  .form {
+    background:white;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 1.2rem 2rem;
+    width: 60vw;
+    height: 700px;
+    overflow: auto;
+    margin: 0 auto;
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+      width: 400px;
+      max-width: 450px;
+    }
+ }
+}
+
+.tag-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  height: 36px;
+}

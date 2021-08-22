@@ -1,0 +1,58 @@
+<div class="form-container">
+  <div class="form-wrapper">
+    <form class="form" [formGroup]="clientForm">
+      <div class="form-group">
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input matInput type="text" formControlName="name" autocomplete="off" cdkFocusInitial required />
+          <mat-error *ngIf="form.name.errors?.required">Name is required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Company</mat-label>
+          <input matInput type="text" formControlName="company" autocomplete="off" required />
+          <mat-error *ngIf="form.company.errors?.required">Company is required</mat-error>
+          <mat-error *ngIf="form.company.errors?.notUnique">This company has already been added</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Avatar</mat-label>
+          <input matInput type="text" formControlName="avatar" autocomplete="off" />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input matInput type="text" formControlName="email" autocomplete="off" required />
+          <mat-error *ngIf="form.email.errors?.required">Email is required</mat-error>
+          <mat-error *ngIf="form.email.errors?.email">Email not valid</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Phone</mat-label>
+          <input matInput type="text" formControlName="phone" autocomplete="off" required />
+          <mat-error *ngIf="form.phone.errors?.required">Phone is required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Address</mat-label>
+          <input matInput type="text" formControlName="address" autocomplete="off" />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>About</mat-label>
+          <input matInput type="text" formControlName="about" autocomplete="off" />
+        </mat-form-field>
+        <ng-container formArrayName="tags">
+          <ng-container *ngFor="let tag of tags.controls; let i = index">
+            <div class="tag-container">
+              <mat-form-field>
+                <mat-label>Tag</mat-label>
+                <input matInput type="text" formControlName="{{i}}" autocomplete="off" />
+              </mat-form-field>
+              <button mat-stroked-button class="button" (click)="removeSelectedTag(i)">Remove Tag</button>
+            </div>
+          </ng-container>
+        </ng-container>
+      </div>
+    </form>
+  </div>
+  <div class="buttons-container">
+    <button mat-stroked-button [disabled]="!clientForm.valid" (click)="save()">Save</button>
+    <button mat-stroked-button (click)="save()">Cancel</button>
+    <button mat-stroked-button (click)="addTag()">Add Tag</button>
+  </div>
+</div>
